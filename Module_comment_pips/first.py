@@ -1,4 +1,8 @@
 import pyjokes
+import os
+import pyttsx3
+
+engine = pyttsx3.init()
 
 joke = pyjokes.get_joke()
 
@@ -15,3 +19,20 @@ assjdnlajd
 
 
 print("joke=======>", joke)
+
+dir = os.getcwd()
+
+print("dir:::===>", dir)
+
+print("kandl", os.listdir("/"))
+
+
+contents = os.listdir(dir)
+
+# Print the list of names
+print(contents)
+
+
+engine.say("hi, mera name prakash hai , aur tumahra name kya hai")
+
+engine.runAndWait()
