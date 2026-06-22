@@ -1,6 +1,6 @@
-import pyjokes
+import pyjokes  # pyright: ignore[reportMissingImports]
+import pyttsx3  # type: ignore
 import os
-import pyttsx3
 
 engine = pyttsx3.init()
 
