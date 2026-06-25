@@ -1,28 +1,18 @@
-# getter and setter in class
-
-
 class Employee:
-    def __init__(self, salary):
-        self._salary = salary
+    def __init__(self, salary, increment):
+        self.salary = salary
+        self.increment = increment
 
-    # get salary using @property
     @property
-    def get_salary(self):
-        return self._salary
+    def salaryAfterIncrement(self):
+        return self.salary + self.salary * (self.increment / 100)
 
-    # set salary
-    @get_salary.setter
-    def set_salary(self, value):
-        if value < 0:
-            raise ValueError("Salary cannot be negative")
-        else:
-            self._salary = value
+    @salaryAfterIncrement.setter
+    def salaryAfterIncrement(self, value):
+        self.increment = ((value / self.salary) - 1) * 100
 
 
-employee = Employee(30000)
-
-print(employee.get_salary)
-
-employee.set_salary = 50000
-
-print(employee.get_salary)
+emp = Employee(233, 10)
+emp.salaryAfterIncrement = 280
+print(emp.increment)
+print(emp.salaryAfterIncrement)
